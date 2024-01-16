@@ -1,0 +1,28 @@
+---
+- name: Deploy Cloud Function
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Install required Python libraries
+      pip:
+        name:
+          - google-auth
+          - google-auth-httplib2
+          - google-auth-oauthlib
+        state: present
+
+    - name: Deploy Cloud Function
+      google.cloud.gcp_cloudfunctions_cloud_function:
+        name: autoscale-function
+        location: europe-west1
+        runtime: python310
+        entry_point: auto_scale_function
+        source_archive_url: gs://assess1122/xero-codee-assessment.zip
+        event_trigger:
+          event_type: google.pubsub.topic.publish
+          resource: projects/learning-397907/topics/user-visits-topic
+        project: learning-397907  
+        auth_kind: serviceaccount
+        service_account_file: "/home/tessie/.ssh/learning-397907-7f7d36c1a89c.json"
+        state: present

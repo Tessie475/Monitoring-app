@@ -1,0 +1,5 @@
+google-auth
+google-cloud
+google-cloud-monitoring
+google-cloud-logging
+google-cloud-pubsub
