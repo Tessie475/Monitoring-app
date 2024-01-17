@@ -10,7 +10,7 @@ credentials, _ = google.auth.default()
 client = monitoring_v3.MetricServiceClient(credentials=credentials)
 
 # Define the project ID
-project_id = "learning-397907"
+project_id = #project_id
 
 def auto_scale_function(event, context):
     # Handle Pub/Sub message and extract information
