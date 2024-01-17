@@ -2,8 +2,8 @@ import os
 import time
 from google.cloud import pubsub_v1
 
-project_id = "learning-397907"
-topic_name = "user-visits-topic"
+project_id = #project_id
+topic_name = #topic_name
 
 # Create a Publisher client
 publisher = pubsub_v1.PublisherClient()
