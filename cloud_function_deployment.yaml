@@ -18,11 +18,11 @@
         location: europe-west1
         runtime: python310
         entry_point: auto_scale_function
-        source_archive_url: gs://assess1122/xero-codee-assessment.zip
+        source_archive_url: #source archive url
         event_trigger:
           event_type: google.pubsub.topic.publish
-          resource: projects/learning-397907/topics/user-visits-topic
-        project: learning-397907  
+          resource: #pub sub topic link
+        project: #project id  
         auth_kind: serviceaccount
-        service_account_file: "/home/tessie/.ssh/learning-397907-7f7d36c1a89c.json"
+        service_account_file: #service account file location 
         state: present
