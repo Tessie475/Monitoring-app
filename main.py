@@ -3,6 +3,7 @@ from google.cloud import monitoring_v3
 import base64
 import datetime
 
+
 # Use the default credentials
 credentials, _ = google.auth.default()
 
